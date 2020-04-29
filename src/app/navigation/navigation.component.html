@@ -2,7 +2,7 @@
 
   <div (click)="expand()" class="menu"></div>
 
-  <nav class="navbar" [ngClass]="{'show': showing, 'hide': !showing}">
+  <nav class="navbar" [ngClass]="{'show': showing, 'hide': !showing}" (mouseleave)="expand()">
     <ul>
       <li *ngFor="let item of items">
         <div class="label">{{item.name}}</div>
