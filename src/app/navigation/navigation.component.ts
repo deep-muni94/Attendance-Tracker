@@ -14,13 +14,19 @@ export class NavigationComponent implements OnInit {
     {'name': 'About Us', 'url': 'aboutus'}
   ];
 
+  public showing = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  doIt(nav){
-    nav.style.width = "250px";
+  expand(){
+    if(this.showing == false){
+      this.showing = true;
+    }else{
+      this.showing = false;
+    }
   }
 
 }

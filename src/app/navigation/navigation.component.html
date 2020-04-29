@@ -1,10 +1,15 @@
-<nav class="navbar" #nav>
-  <ul>
-    <li *ngFor="let item of items">
-      <a routerLink="{{item.url}}" routerLinkActive="active">{{item.name}}</a></li>
-  </ul>
-</nav>
+<div class="wrapper">
 
+  <div (click)="expand()" class="menu"></div>
 
+  <nav class="navbar" [ngClass]="{'show': showing, 'hide': !showing}">
+    <ul>
+      <li *ngFor="let item of items">
+        <div class="label">{{item.name}}</div>
+        <a routerLink="{{item.url}}" routerLinkActive="active"></a>
+        <div class="arrow"></div>
+      </li>
+    </ul>
+  </nav>
 
-<button (click)="doIt(nav)">Click Me</button>
+</div>
