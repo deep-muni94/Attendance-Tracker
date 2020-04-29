@@ -1,0 +1,10 @@
+<nav class="navbar" #nav>
+  <ul>
+    <li *ngFor="let item of items">
+      <a routerLink="{{item.url}}" routerLinkActive="active">{{item.name}}</a></li>
+  </ul>
+</nav>
+
+
+
+<button (click)="doIt(nav)">Click Me</button>
