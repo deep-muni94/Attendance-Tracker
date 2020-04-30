@@ -18,7 +18,7 @@ export class RegisterComponent {
     password: ['', [Validators.required]],
     cpass: ['']
   });
-  private nomatch: boolean;
+  nomatch: boolean;
 
   constructor(private fb: FormBuilder) { }
 
