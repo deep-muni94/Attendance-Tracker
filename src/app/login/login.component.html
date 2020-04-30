@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div id="form_area">
+  <form [formGroup]="login" (ngSubmit)="submit()">
+    <div class="input-section">
+      <label for="username">User Name</label>
+      <input type="text" id="username" placeholder="User Name" class="inp" formControlName="username"/>
+      <div *ngIf="IsSubmitted && control.username.errors" class="error">
+        <div *ngIf="control.username.errors.required">User Name is required</div>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <label for="pass">Password</label>
+      <input type="password" id="pass" placeholder="Password" class="inp" formControlName="password"/>
+      <div *ngIf="IsSubmitted && control.password.errors" class="error">
+        <div *ngIf="control.password.errors.required">Password is required</div>
+      </div>
+    </div>
+    <button class="submit">Login</button>
+  </form>
+</div>
