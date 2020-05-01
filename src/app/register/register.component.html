@@ -52,7 +52,7 @@
     <button class="submit">Register</button>
     <div class="error">
       <div *ngIf="error">Please try again!!</div>
-      <div *ngIf="exist">Request for {{control.empid.value}} already exist</div>
+      <div *ngIf="exist">Request for {{id}} already exist</div>
       <div *ngIf="success" style="color: green">Your request has been sent for approval</div>
     </div>
   </form>

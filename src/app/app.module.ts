@@ -11,6 +11,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AppRoutingModule } from "./app-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
     RegisterComponent,
     ExplainComponent,
     AboutusComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AdminPanelComponent
   ],
     imports: [
         BrowserModule,

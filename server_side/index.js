@@ -28,15 +28,12 @@ con.connect(function(err) {
 
 app.post('/request', function (req, res) {
 
-  console.log(req.body);
-
   const select = "SELECT employee_id " +
     "FROM request " +
     "WHERE employee_id = " + req.body['empid'];
 
   con.query(select, function (err, result, fields) {
     if (err){
-      console.log(err);
       res.json({'status': 'error'});
     }else{
       if(result.length === 0){
@@ -48,14 +45,13 @@ app.post('/request', function (req, res) {
 
         con.query(insert, function (err, result) {
           if (err) {
-            console.log(err);
             res.json({'status': 'error'});
           }else{
             res.json({'status': 'success'})
           }
         });
       }else if(result.length === 1){
-        res.json({'status': 'exist'});
+        res.json({'status': 'exist', 'id': req.body['empid']});
       }
     }
   });

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 
@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent {
 
   IsSubmitted = false;
@@ -23,6 +24,7 @@ export class RegisterComponent {
   error: boolean;
   exist: boolean;
   success: boolean;
+  id;
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
@@ -44,6 +46,7 @@ export class RegisterComponent {
         if(data['status'] === 'error'){
           this.error = true;
         }else if(data['status'] === 'exist'){
+          this.id = data['id'];
           this.exist = true;
         }else if(data['status'] === 'success'){
           this.success = true;
